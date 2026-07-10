@@ -88,17 +88,24 @@ This enables simulation of realistic system behavior, including minimum detectab
 This model assumes:
 
 - Linear elastic beam behavior
-- Pure bending (no shear or torsion)
 - Force applied at a fixed location
-- Perfect alignment of strain gauges (axial direction)
-- Ideal full-bridge behavior (simplified model)
+- Isotropic material response
+- Small strains and linear bridge behavior
+
+What is now modeled:
+
+- Normal force and prying/offset moment (bending)
+- Torsional torque (shear strain $\gamma_{xy}$)
+- 0/90° and 45/45° Wheatstone bridge orientations
+- Poisson coupling in the gauge rosette
+- Two-bridge decoupling of force and torque
 
 Not yet modeled:
 
-- Multi-axis forces (shear, torsion)
-- Strain gauge orientation effects
 - ADC quantization and digital filtering
 - Temperature drift and long-term stability
+- Cross-axis stiffness and mounting compliance
+- Dynamic loading and vibration effects
 
 ---
 
@@ -106,9 +113,8 @@ Not yet modeled:
 
 Possible extensions include:
 
-- Multi-axis sensing using rotated strain gauges
 - Variable contact location estimation
-- ADC modeling (quantization + noise)
+- ADC and amplifier noise modeling
 - Sensor placement optimization
 - Dynamic loading and vibration effects
 
