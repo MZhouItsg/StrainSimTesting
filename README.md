@@ -103,6 +103,7 @@ This enables simulation of realistic system behavior, including minimum detectab
 - The 4-resistor MEMS bridge model is needed for accurate multi-axis force/torque estimation; the simple linear `V ≈ V_ex * GF * strain` model underestimates force
 - Two replicated 0/90° bridges can decouple normal force and prying torque because each sensor sees a different bending moment
 - A dual-beam gripper with two 0/90° sensors per beam turns normal force into a common-mode signal and prying torque into a differential signal, improving force estimation under noise
+- Different bridge configurations (0/90, 45/45, half, quarter) produce distinct voltage and total-resistance signatures, which can be used to reverse-engineer the sensor wiring
 - Noise limits system performance more than ADC resolution
 - At small signal levels, absolute noise dominates and degrades accuracy
 
@@ -126,6 +127,7 @@ What is now modeled:
 - Two-bridge decoupling of force and torque
 - Two replicated 0/90° bridges resolving normal force and prying torque (Section 3.2)
 - Dual-beam gripper with two 0/90° sensors per beam resolving normal force and prying torque (Section 3.3)
+- Reverse-engineering candidate bridge configurations (0/90, 45/45, half, quarter) with output voltage and total resistance (Section 5)
 
 Not yet modeled:
 
